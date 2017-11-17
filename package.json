@@ -1,0 +1,26 @@
+{
+	"name": "riot-date-picker",
+	"version": "1.0.0",
+	"description": "Date picker tag for Riot.js",
+	"main": "date-picker.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"prepublish": "npm run build",
+		"build": "riot --template pug date-picker.tag -o | uglifyjs -o date-picker.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bminer/riot-date-picker.git"
+	},
+	"author": "Blake C. Miner",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/bminer/riot-date-picker/issues"
+	},
+	"homepage": "https://github.com/bminer/riot-date-picker#readme",
+	"devDependencies": {
+		"pug": ">=2.0.0-rc.4 <3",
+		"riot": "^3.7.4",
+		"uglify-es": "^3.1.9"
+	}
+}
