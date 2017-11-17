@@ -1,0 +1,39 @@
+// Some sample styling for the <date-picker> tag; written in Stylus
+date-picker
+	position: relative
+	> .picker
+		background: rgba(white, 70%)
+		position: absolute
+		left: 0
+		font-size: 70%
+		text-align: center
+		> .monthSelector
+			margin: 1em 0
+			display: flex
+			align-items: center
+			> .currMonth
+				flex: 1
+			> .currYear
+				flex: 0.5
+			> button
+				font-weight: bold
+				padding: 0.5em
+		> table
+			table-layout: fixed
+			width: 100%
+			border-collapse: collapse
+			th, td
+				text-align: center
+			td
+				cursor: pointer
+				border: 1px solid #aaa
+				padding: 1em 0
+				color: #777
+				background-color: #eee
+				&.cur
+					color: inherit
+					background-color: white
+				&.selected
+					font-weight: bold
+					background-color: #333
+					color: white

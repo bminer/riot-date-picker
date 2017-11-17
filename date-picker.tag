@@ -131,3 +131,7 @@ date-picker
 				this.rows.push(row);
 			}
 		});
+	
+	style(scoped).
+		@import "./date-picker.styl"
+		

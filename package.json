@@ -6,7 +6,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"prepublish": "npm run build",
-		"build": "riot --template pug date-picker.tag -o | uglifyjs -o date-picker.js"
+		"build": "riot --template pug --style stylus date-picker.tag -o | uglifyjs -o date-picker.js"
 	},
 	"repository": {
 		"type": "git",
@@ -21,6 +21,7 @@
 	"devDependencies": {
 		"pug": ">=2.0.0-rc.4 <3",
 		"riot": "^3.7.4",
+		"stylus": "~0.54.5",
 		"uglify-es": "^3.1.9"
 	}
 }
