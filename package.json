@@ -1,6 +1,6 @@
 {
 	"name": "riot-date-picker",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Date picker tag for Riot.js",
 	"main": "date-picker.js",
 	"scripts": {
