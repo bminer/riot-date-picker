@@ -15,7 +15,7 @@ date-picker
 		table
 			thead
 				tr
-					th(each="{weekday in weekdays}") {weekday.short}
+					th(each="{weekday in weekdays}") {weekday}
 			tbody
 				tr(each="{row in rows}")
 					td(class="{cur: d.getMonth() == currentMonth,"+
@@ -58,7 +58,10 @@ date-picker
 		// Show the date picker UI when the <input> element is focused
 		this.showPicker = false;
 		this.focus = (e) => {
-			this.showPicker = true;
+			if(this.showPicker)
+				e.preventUpdate = true;
+			else
+				this.showPicker = true;
 		};
 		// Hide the picker on <input> blur, unless the picker itself is clicked
 		this.pickerClick = (e) => {
@@ -67,10 +70,12 @@ date-picker
 		};
 		this.blur = (e) => {
 			if(this.abortBlur) {
+				e.currentTarget.focus();
 				this.abortBlur = false;
 				e.preventUpdate = true;
 			} else {
 				this.showPicker = false;
+				this.monthOffset = 0;
 			}
 		};
 
@@ -79,6 +84,8 @@ date-picker
 			setValue(e.currentTarget.value);
 			// Clear `monthOffset`
 			this.monthOffset = 0;
+			// Manually update the <input>'s value (just in case Riot doesn't)
+			e.currentTarget.value = this.formatValue(this.value);
 		};
 
 		// Value is set by clicking on a date in the picker UI
@@ -131,7 +138,6 @@ date-picker
 				this.rows.push(row);
 			}
 		});
-	
+
 	style(scoped).
 		@import "./date-picker.styl"
-		
