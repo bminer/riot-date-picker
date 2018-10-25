@@ -19,7 +19,8 @@ date-picker
 			tbody
 				tr(each="{row in rows}")
 					td(class="{cur: d.getMonth() == currentMonth,"+
-						"selected: d.valueOf() === value.valueOf()}"
+						"selected: d.valueOf() === value.valueOf(),"+
+						"today: d.toDateString() === new Date().toDateString()}"
 						each="{d in row}"
 						click="{setValue}") {d.getDate()}
 	script.
