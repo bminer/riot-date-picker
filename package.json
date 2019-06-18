@@ -19,9 +19,9 @@
 	},
 	"homepage": "https://github.com/bminer/riot-date-picker#readme",
 	"devDependencies": {
-		"pug": ">=2.0.0-rc.4 <3",
-		"riot": "^3.7.4",
+		"pug": "^2.0.4",
+		"riot": "^3.13.2",
 		"stylus": "~0.54.5",
-		"uglify-es": "^3.1.9"
+		"uglify-es": "^3.3.9"
 	}
 }
